@@ -1,0 +1,37 @@
+.accordion-icon {
+    border: solid currentcolor;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    height: 8px;
+    pointer-events: none;
+    transform: translateY(-2px) rotate(45deg);
+    width: 8px;
+  }
+  
+  .accordion-icon-rotate{
+    transform: rotate(225deg);
+
+  }
+
+  .accordion-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+    padding: 4px 0;
+  }
+
+  .accordion-item-title {
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 4px;
+    justify-content: space-between;
+    text-align: start;
+    display: flex;
+  }
+  
+  .accordion-item-title:hover {
+    background-color: #eee;
+  }
