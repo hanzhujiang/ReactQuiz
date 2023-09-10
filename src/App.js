@@ -11,6 +11,8 @@ function App() {
       <ContactFormApp/>
       <div>-----------------------------------</div>
       <GenerateTableApp/>
+      <div>-----------------------------------</div>
+
     </div>
   );
 }

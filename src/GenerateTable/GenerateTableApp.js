@@ -1,54 +1,52 @@
 import React, { useState } from 'react';
 import './GenerateTableApp.css';
 
-function Table({renderData}) {
-    let row =renderData[0];
-    let column=renderData[1];
+function Table({ renderData }) {
+  const [row, column] = renderData;
   return (
-    <div>
+    <div className='table-wrapper'>
       <table>
         <tbody>
-            {Array.from({ length: row }, () => 0).map((ii,rowIndex)=>{
-                return (
-                    <tr >
-                    {Array.from({ length: column }, () => 0).map((item,index)=>{
-                        return <td>{index*row + 1 +rowIndex }</td>
-                    })}
-                </tr>
-                )
-            })}
-
+          {Array.from({ length: row }, () => 0).map((_, rowIndex) => {
+            return (
+              <tr key={rowIndex}>
+                {Array.from({ length: column }, () => 0).map(
+                  (_, columnIndex) => {
+                    return <td key={columnIndex}>{columnIndex * row + 1 + rowIndex}</td>;
+                  }
+                )}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
   );
 }
 
-
 export default function GenerateTableApp() {
   const [row, setrow] = useState('');
   const [column, setcolumn] = useState('');
-  const [renderArray, setrenderArray] = useState([])
+  const [renderArray, setrenderArray] = useState([]);
 
   const handleSubmit = () => {
-    console.log("ddd",[row,column]);
-    setrenderArray([row,column])
+    setrenderArray([row, column]);
   };
 
   return (
     <div>
       <div>
-
-       rows: <input
+        rows:{' '}
+        <input
           name='rows'
           id='row-input'
-          type='number'
+          type='text'
           value={row}
           onChange={(e) => setrow(e.target.value)}
         ></input>
       </div>
       <div>
-        column: 
+        column:
         <input
           name='column'
           id='column-input'
@@ -59,7 +57,7 @@ export default function GenerateTableApp() {
       </div>
 
       <button onClick={handleSubmit}>Submit</button>
-      {renderArray.length&&<Table renderData={renderArray} />}
+      <Table renderData={renderArray} />
     </div>
   );
 }

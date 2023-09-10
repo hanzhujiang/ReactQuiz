@@ -5,3 +5,8 @@ table td{
 table{
     border-collapse: collapse;
 }
+
+.table-wrapper{
+    display: flex;
+    justify-content: center;
+}
