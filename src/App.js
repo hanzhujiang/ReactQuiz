@@ -3,6 +3,7 @@ import Accordion from "./Accordian/AccordionApp";
 import ContactFormApp from './ContactForm/ContactFormApp';
 import GenerateTableApp from './GenerateTable/GenerateTableApp';
 import FormApp from "./FormApp/FormApp";
+import FormDesignObjective from './FormDesignObjective/FormDesignObjective';
 
 const Delimiter =()=>{
   return  <div style={{backgroundColor:"pink",height:'10px',margin:'10px 0 10px 0'}}></div>
@@ -19,6 +20,7 @@ function App() {
       <Delimiter/>
       <FormApp/>
       <Delimiter/>
+      <FormDesignObjective/>
 
     </div>
   );
