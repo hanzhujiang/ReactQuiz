@@ -11,54 +11,41 @@ const FormDesignObjective = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [tempData, setTempData] = useState(initialData);
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setTempData(prevData => ({ ...prevData, [name]: value }));
+    const handleChange = () => {
     };
 
     const handleEdit = () => {
-        setIsEditing(true);
+        setIsEditing(true)
     };
 
     const handleSave = () => {
-        setUserData(tempData);
-        setIsEditing(false);
     };
 
     const handleCancel = () => {
-        setTempData(userData);
-        setIsEditing(false);
+        setIsEditing(false)
+        
     };
 
     return (
         <div className="container">
-            {!isEditing ? (
-                <div>
-                    <p><strong>Name:</strong> {userData.userName}</p>
-                    <p><strong>Email:</strong> {userData.email}</p>
-                    <p><strong>Mobile:</strong> {userData.mobile}</p>
-                    <button onClick={handleEdit}>Edit</button>
-                </div>
-            ) : (
-                <div>
-                    <div>
-                        <label>Name: </label>
-                        <input type="text" name="userName" value={tempData.userName} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Email: </label>
-                        <input type="email" name="email" value={tempData.email} onChange={handleChange} />
-                    </div>
-                    <div>
-                        <label>Mobile: </label>
-                        <input type="tel" name="mobile" value={tempData.mobile} onChange={handleChange} />
-                    </div>
-                    <div className="button-group">
-                        <button onClick={handleSave}>Save</button>
-                        <button onClick={handleCancel}>Cancel</button>
-                    </div>
-                </div>
-            )}
+            {!isEditing?(<div>
+                <p><span>Name:</span>{userData.userName}</p>
+                <p><span>Email:</span>{userData.email}</p>
+                <p><span>Mobile:</span>{userData.mobile}</p>
+                <button onClick={handleEdit}>Edit</button>
+            </div>):(<div>
+                <form onChange={handleChange}>
+                    <label name="userName">Name:</label>
+                    <input name="userName" type="text"></input>
+                    <label name="email">Email:</label>
+                    <input name="email" type="email"></input>
+                    <label name="mobile">Mobile:</label>
+                    <input name="mobile" type="text"></input>
+                    <button onClick={handleChange}>Save</button>
+                    <button onClick={handleCancel}>Cancel</button>
+
+                </form>
+            </div>)}
         </div>
     );
 };

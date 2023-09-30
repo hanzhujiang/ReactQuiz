@@ -12,14 +12,14 @@ const Delimiter =()=>{
 function App() {
   return (
     <div className="App">
-      <Accordion/>
+      {/* <Accordion/>
       <Delimiter/>
       <ContactFormApp/>
       <Delimiter/>
       <GenerateTableApp/>
       <Delimiter/>
       <FormApp/>
-      <Delimiter/>
+      <Delimiter/> */}
       <FormDesignObjective/>
 
     </div>
