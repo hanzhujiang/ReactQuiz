@@ -34,17 +34,14 @@ const FormDesignObjective = () => {
                 <p><span>Mobile:</span>{userData.mobile}</p>
                 <button onClick={handleEdit}>Edit</button>
             </div>):(<div>
-                <form onChange={handleChange}>
                     <label name="userName">Name:</label>
-                    <input name="userName" type="text"></input>
+                    <input name="userName" type="text" onChange={handleChange}></input>
                     <label name="email">Email:</label>
                     <input name="email" type="email"></input>
                     <label name="mobile">Mobile:</label>
                     <input name="mobile" type="text"></input>
                     <button onClick={handleChange}>Save</button>
                     <button onClick={handleCancel}>Cancel</button>
-
-                </form>
             </div>)}
         </div>
     );
